@@ -1,8 +1,13 @@
 export default function Index(){
   return (
     <>
-    <p>hello</p>
-    <p>world</p>
+    <main>
+      <div>
+        <h1>Learning stuff</h1>
+        </div>
+
+        <p>lorem akfefjhvjfhvejhf hvfhewbjhvefvhwjh fvjhewvfjhevjhfv  fwvefjhvh hjfd</p>
+      </main>
     </>
   );
 }
