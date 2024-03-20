@@ -27,13 +27,13 @@ export default function ContactUs() {
                 <div className="flex flex-col gap-4">
                     <blockquote className="min-h-32 flex flex-row gap-4 justify-center items-center border border-gray-300 rounded-md shadow-md">
                         <FaMapPin className="text-5xl" />
-                        <p className="text-2xl">1st Floor Pronent,Plot B53 Gado Nasko Road, Kubwa, Abuja ,Nigeria</p>
+                        <p className="">1st Floor Pronent,Plot B53 Gado Nasko Road, Kubwa, Abuja ,Nigeria</p>
 
                     </blockquote>
                     <div className="grid md:grid-cols-2 gap-4">
                         <blockquote className="min-h-32 flex flex-row gap-4 justify-center items-center border border-gray-300 rounded-md shadow-md">
                             <IoMdMailOpen className="text-5xl" />
-                            <Link href='mailto:sales@irun.com className=text-2xl'>sales@irun.com</Link>
+                            <Link href='mailto:sales@irun.com'>sales@irun.com</Link>
                         </blockquote>
 
                         <blockquote className="min-h-32 flex flex-row gap-4 justify-center items-center border border-gray-300 rounded-md shadow-md">
