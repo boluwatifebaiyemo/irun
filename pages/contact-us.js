@@ -27,7 +27,7 @@ export default function ContactUs() {
                 <div className="flex flex-col gap-4">
                     <blockquote className="min-h-32 flex flex-row gap-4 justify-center items-center border border-gray-300 rounded-md shadow-md">
                         <FaMapPin className="text-5xl" />
-                        <p className="">1st Floor Pronent,Plot B53 Gado Nasko Road, Kubwa, Abuja ,Nigeria</p>
+                        <p>1st Floor Pronent,Plot B53 Gado Nasko Road, Kubwa, Abuja ,Nigeria</p>
 
                     </blockquote>
                     <div className="grid md:grid-cols-2 gap-4">
@@ -38,7 +38,7 @@ export default function ContactUs() {
 
                         <blockquote className="min-h-32 flex flex-row gap-4 justify-center items-center border border-gray-300 rounded-md shadow-md">
                             <IoMdMailOpen className="text-5xl" />
-                            <Link href='tel:07098456734' className='text-2xl'>07098456734</Link>
+                            <Link href='tel:07098456734'>07098456734</Link>
                         </blockquote>
                     </div>
                 </div>
@@ -47,16 +47,16 @@ export default function ContactUs() {
                     <h2 className={`${MerriReg400.className} text-3xl text-center`}>Engage With Us Across Our Platforms</h2>
 
                     <div className="grid md:grid-cols-3 gap-4">
-                        <blockquote className="min-h-32 flex flex-row gap-4 justify-center items-center border border-gray-300 rounded-md shadow-md">
+                        <blockquote className="min-h-32 flex flex-row gap-4 justify-center items-center border border-gray-300 rounded-md shadow-lg">
                             <FaInstagram className="text-[#d63484] text-4xl" />
                             <Link href='http://instagram.com/early_code_tech' className=''>@early_code_tech</Link>
                         </blockquote>
-                        <blockquote className="min-h-32 flex flex-row gap-4 justify-center items-center border border-gray-300 rounded-md shadow-md">
-                            <FaInstagram className="text-[#d63484] text-4xl" />
+                        <blockquote className="min-h-32 flex flex-row gap-4 justify-center items-center border border-gray-300 rounded-md shadow-lg">
+                            <FaFacebook className="text-[#235074] text-4xl" />
                             <Link href='http://facebook.com/earlycodetech' className=''>@early_code_tech</Link>
                         </blockquote>
-                        <blockquote className="min-h-32 flex flex-row gap-4 justify-center items-center border border-gray-300 rounded-md shadow-md">
-                            <FaInstagram className="text-[#d63484] text-4xl" />
+                        <blockquote className="min-h-32 flex flex-row gap-4 justify-center items-center border border-gray-300 rounded-md shadow-lg">
+                            <FaXTwitter className="text-[#1c1c1c] text-4xl" />
                             <Link href='http://twitter.com/earlycodetech' className=''>@early_code_tech</Link>
                         </blockquote>
                     </div>

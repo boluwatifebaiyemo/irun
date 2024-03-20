@@ -53,8 +53,8 @@ export function NavBar() {
 
                 {/* show on mobile and tablet */}
                 <div className="lg:hidden flex justify-end items-center">
-                    <HiMenuAlt3 onClick={() => setShowMenu(true)} className={`${!showMenu ? "flex" : "hidden"} text-gray-200 text-4xl`} />
-                    <MdClose onClick={() => setShowMenu(false)} className={`${showMenu ? "flex" : "hidden"} text-gray-200 text-4xl`} />
+                    <HiMenuAlt3 onClick={() => setShowMenu(false)} className={`${showMenu ? "flex" : "hidden"} text-gray-200 text-4xl`} />
+                    <MdClose onClick={() => setShowMenu(true)} className={`${showMenu ? "hidden" : "flex"} text-gray-200 text-4xl`} />
                 </div>
 
 
@@ -83,7 +83,7 @@ export function NavBar() {
                 </div>
             </nav>
 
-            <div className={`${showMenu ? "flex" : "hidden"} flex-col gap-6 items-center justify-center lg:hidden min-h-80 w-full absolute top-[60px] left-0 z-10 bg-gray-800`}>
+            <div className={`${!showMenu ? "flex" : "hidden"} flex-col gap-6 items-center justify-center lg:hidden min-h-80 w-full absolute top-[60px] left-0 z-10 bg-gray-800`}>
                 <ul className="flex flex-col gap-3">
                     <li className="text-gray-200 text-2xl text-center"><Link href="#">Shop</Link></li>
                     <li className="text-gray-200 text-2xl text-center"><Link href="#">Accessories</Link></li>
