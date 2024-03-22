@@ -54,7 +54,7 @@ export default function Index() {
 
         {/* shop intro section */}
 
-        {/* <section className="grid grid-cols-3">
+        <section className="grid grid-cols-3">
           <article>
             <Card sx={{ maxWidth: 345 }}>
               <CardActionArea>
@@ -65,7 +65,7 @@ export default function Index() {
                   alt="green iguana"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography >
                     Lizard
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -93,7 +93,7 @@ export default function Index() {
             </div>
           </aside>
 
-        </section> */}
+        </section>
 
 
 
