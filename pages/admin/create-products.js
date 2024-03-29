@@ -2,10 +2,12 @@ import Head from "next/head";
 import { Button, TextField } from "@mui/material";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { firestoreDB } from "@/config/firebase.config";
+import { collection, addDoc } from "firebase/firestore"
 
 const formRules = yup.object().shape({
-    productName: yup.string().required("This field is Mandatory").min(3,"Minimum of 3 Characters Required").max(10, "Maximum of 10 characters required"),
-    desc: yup.string().required("This field is Mandatory").min(16,"Minimum of 3 Characters Required").max(100000, "Maximum of 10,000 characters required"),
+    productName: yup.string().required("This field is Mandatory").min(3, "Minimum of 3 Characters Required").max(10, "Maximum of 10 characters required"),
+    desc: yup.string().required("This field is Mandatory").min(16, "Minimum of 3 Characters Required").max(100000, "Maximum of 10,000 characters required"),
     price: yup.number().required().min().max(100),
     stock: yup.number().required().min().max(1),
 });
@@ -15,7 +17,15 @@ export default function CreateAccount() {
     const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
         initialValues: { productName: "", desc: "", price: 0, stock: 1 },
         onSubmit: () => {
-            console.log(values.productName)
+            addDoc(collection(firestoreDB, 'products'), {
+                productName: values.productName,
+                desc: values.desc,
+                price: values.price,
+                stock: values.stock,
+                createdAt: new Date().getTime(),
+            })
+                .then(() => console.log('successful'))
+                .catch((e) = console.log(e))
         },
         validationSchema: formRules
 
@@ -74,7 +84,7 @@ export default function CreateAccount() {
                                 ? <span className="text-red-500 text-xs">{errors.price}</span>
                                 : null}
                         </div>
-                        
+
                         <div className="mb-2">
                             <label className="text-gray-500 text-sm">Stock Availability</label>
                             <TextField

@@ -93,7 +93,7 @@ export function NavBar() {
                 <div className="flex flex-col gap-3">
                     <ul className="flex flex-row gap-4 items-center ">
                         <li><Link href="#"><CiSearch className={styles.navLinkIcon} /></Link></li>
-                        <li><Link href="#"><CiUser className={styles.navLinkIcon} /></Link></li>
+                        <li><Link href="/pages/auth/signin.js"><CiUser className={styles.navLinkIcon} /></Link></li>
                         <li><Link href="#"><CiHeart className={styles.navLinkIcon} /></Link></li>
                         <li><Link href="#"><CiShoppingCart className={styles.navLinkIcon} /></Link></li>
                     </ul>
