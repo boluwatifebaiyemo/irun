@@ -1,6 +1,10 @@
 import NextAuth from "next-auth/next";
+import { cert } from "firebase-admin/app";
+import { FirestoreAdapter } from "@auth/firebase-adapter";
 import GoogleProvider from 'next-auth/providers/google';
 import GitHubProvider from "next-auth/providers/github";
+import { firestoreDB } from "@/config/firebase.config";
+import { getDoc,doc } from "firebase/firestore";
 
 export const authOptions = {
     providers: [
@@ -12,7 +16,26 @@ export const authOptions = {
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET,
         })
-    ]
+    ],
+    adapter: FirestoreAdapter({
+        credential: cert({
+          projectId: process.env.FIREBASE_PROJECT_ID,
+          clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+          privateKey: process.env.FIREBASE_PRIVATE_KEY ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n") : undefined,
+        }),
+    }),
+    callbacks:{
+        async session({session,user}) {
+            session.uid = user.id;//creates a new session prop called id
+
+	    const docRef = doc(firestoreDB, "users", user.id);
+            const docSnap = await getDoc(docRef);
+
+            session.user_data = docSnap.data();
+
+            return session;
+        }
+    }
 }
 
 

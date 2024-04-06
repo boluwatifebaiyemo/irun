@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import NextAuth from "next-auth/next";
 import Head from "next/head";
 import { useRouter } from 'next/router';
 import { Button } from "@mui/material";
@@ -25,8 +24,8 @@ export default function SignIn() {
     const router = useRouter();
 
     // useEffect(() => {
-    //     session ? router.push("/admin/create-products") : null
-    // },[session])
+    //     session ? router.push('/admin/create-product') : null;
+    // },[session]);
 
     console.log(session?.user);
 
@@ -47,10 +46,11 @@ export default function SignIn() {
                         variant="contained"
                         className="w-full py-3 bg-slate-800 hover:bg-slate-600 flex flex-row justify-around"
                         onClick={() => signIn('github')}>Continue with <FaGithub className="text-3xl" /></Button>
-                    <Button
+                        
+                    {/* <Button
                         variant="contained"
                         className="w-full py-3 bg-slate-800 hover:bg-slate-600 flex flex-row justify-around"
-                        onClick={() => signOut()}>Sign Out<FaSignOutAlt className="text-3xl"/></Button>
+                        onClick={() => signOut()}>Sign Out<FaSignOutAlt className="text-3xl"/></Button> */}
                 </div>
             </main>
         </>
